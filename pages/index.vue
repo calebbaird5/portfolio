@@ -8,7 +8,7 @@
       <div class="skills">
         <div class="skill" v-for="skill in skills">
           <v-btn @click="log(skill.name)" icon>
-            <img class="img" :alt="skill.name" :src="'/img/' + skill.icon" />
+            <img class="img" :alt="skill.name" :src="'/portfolio/img/' + skill.icon" />
           </v-btn>
           <span class="name bg-surface">{{ skill.name }}</span>
           <!-- <v-expansion-panel :title="skill.name"  :text="skill.proficiency"/> -->

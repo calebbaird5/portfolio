@@ -63,7 +63,7 @@ function setRail() {
   console.log('setRail')
   rail.value = !rail.value;
 }
-  const avatar = ref('/img/profile.png');
+  const avatar = ref('/portfolio/img/profile.png');
 const name = ref('Caleb Baird');
 const phone = ref('208-390-8659');
 const email = ref('calebbaird5@gmail.com');
