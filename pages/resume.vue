@@ -1,6 +1,6 @@
 <template>
   <div class="resume">
-    <VuePdfEmbed source="/img/Caleb Baird Resume.pdf" />
+    <VuePdfEmbed source="/portfolio/img/Caleb Baird Resume.pdf" />
     <v-btn
       icon="mdi-download"
       @click="() => downloadFile('/portfolio/img/Caleb Baird Resume.pdf', 'resume')"
