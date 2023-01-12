@@ -276,6 +276,7 @@ function log(s) {
     font-size: 13px;
     padding: 5px;
     border-radius: 5px;
+    white-space: nowrap;
   }
 }
 

@@ -26,13 +26,13 @@
       <v-list-item @click="setRail">
         <v-icon v-if="rail" icon="mdi-unfold-more-vertical" />
         <v-icon v-else icon="mdi-unfold-less-vertical" />
-        <span v-if="!rail">minimize sidebar</span>
+        <span v-if="!rail">Minimize Sidebar</span>
       </v-list-item>
 
       <v-list-item @click="toggleTheme">
         <v-icon icon="mdi-theme-light-dark" />
         <span v-if="!rail">
-          switch to {{ theme.global.current.value.dark ? 'light' : 'dark' }} mode</span>
+          Switch to {{ theme.global.current.value.dark ? 'light' : 'dark' }} mode</span>
 
       </v-list-item>
 

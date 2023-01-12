@@ -7,6 +7,7 @@
 		  <v-tabs @update:modelValue="(i) => changeTab(i)">
 				<v-tab v-for="(item, i) in menuItems"> {{ item.title }} </v-tab>
       </v-tabs>
+      <v-divider />
 
 	    <v-container>
 		    <slot />
