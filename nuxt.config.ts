@@ -16,5 +16,4 @@ export default defineNuxtConfig({
   },
   dir: { pages: 'pages' },
 	ssr: false,
-  target: 'static',
 })
