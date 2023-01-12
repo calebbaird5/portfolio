@@ -14,6 +14,10 @@ export default defineNuxtConfig({
       'process.env.DEBUG': true,
     },
   },
+  build: {
+    publicPath: '/nuxt/',
+  },
+
   dir: { pages: 'pages' },
 	ssr: false,
 })
