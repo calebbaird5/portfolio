@@ -1,1 +1,0 @@
-import{k as o,b as t,o as n,f as e}from"./entry.ce160ea7.js";const s={},c={class:"projects"},r=e("p",null,"I have created a number of projects in my free time. I am currently working on uploading them here.",-1),a=e("h3",null,"Coming Soon!",-1),_=[r,a];function i(d,l){return n(),t("div",c,_)}const f=o(s,[["render",i]]);export{f as default};

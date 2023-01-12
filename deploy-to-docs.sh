@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf ./docs/*
 cp -r ./.output/public/* ./docs
 cd docs
 mv _nuxt nuxt

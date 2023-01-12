@@ -3,7 +3,7 @@
     <VuePdfEmbed source="/img/Caleb Baird Resume.pdf" />
     <v-btn
       icon="mdi-download"
-      @click="() => downloadFile('/img/Caleb Baird Resume.pdf', 'resume')"
+      @click="() => downloadFile('/portfolio/img/Caleb Baird Resume.pdf', 'resume')"
       />
   </div>
 </template>
