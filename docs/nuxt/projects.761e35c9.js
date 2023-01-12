@@ -1,0 +1,1 @@
+import{l as o,e as t,o as n,h as e}from"./entry.1d59b5ac.js";const s={},c={class:"projects"},r=e("p",null,"I have created a number of projects in my free time. I am currently working on uploading them here.",-1),a=e("h3",null,"Coming Soon!",-1),_=[r,a];function i(l,d){return n(),t("div",c,_)}const m=o(s,[["render",i]]);export{m as default};

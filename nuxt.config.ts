@@ -14,8 +14,11 @@ export default defineNuxtConfig({
       'process.env.DEBUG': true,
     },
   },
-  build: {
-    publicPath: '/nuxt/',
+
+  runtimeConfig: {
+    public: {
+      filePrefix: process.env.NUXT_APP_BASE_URL || '/'
+    }
   },
 
   dir: { pages: 'pages' },

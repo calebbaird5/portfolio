@@ -42,7 +42,8 @@
 </template>
 
 <script lang="ts" setup="setup">
-  import { useTheme } from 'vuetify'
+  const runtimeConfig = useRuntimeConfig();
+import { useTheme } from 'vuetify'
 const theme = useTheme()
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark
@@ -63,7 +64,7 @@ function setRail() {
   console.log('setRail')
   rail.value = !rail.value;
 }
-  const avatar = ref('/portfolio/img/profile.png');
+  const avatar = ref(runtimeConfig.public.filePrefix + 'img/profile.png');
 const name = ref('Caleb Baird');
 const phone = ref('208-390-8659');
 const email = ref('calebbaird5@gmail.com');

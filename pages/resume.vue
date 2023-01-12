@@ -1,15 +1,16 @@
 <template>
   <div class="resume">
-    <VuePdfEmbed source="/portfolio/img/Caleb Baird Resume.pdf" />
+    <VuePdfEmbed :source="runtimeConfig.public.filePrefix + 'img/Caleb Baird Resume.pdf'" />
     <v-btn
       icon="mdi-download"
-      @click="() => downloadFile('/portfolio/img/Caleb Baird Resume.pdf', 'resume')"
+      @click="() => downloadFile(runtimeConfig.public.filePrefix + 'img/Caleb Baird Resume.pdf', 'resume')"
       />
   </div>
 </template>
 
 <script lang="ts" setup="setup">
-  import VuePdfEmbed from 'vue-pdf-embed'
+  const runtimeConfig = useRuntimeConfig();
+import VuePdfEmbed from 'vue-pdf-embed'
 
 function downloadFile(fileName, text) {
   // Create a new Blob object with the text
