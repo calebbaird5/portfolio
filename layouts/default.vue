@@ -4,7 +4,7 @@
     <Sidebar />
 
     <v-main>
-		  <v-tabs @update:modelValue="(i) => changeTab(i)">
+		  <v-tabs v-model="activeTab" >
 				<v-tab v-for="(item, i) in menuItems"> {{ item.title }} </v-tab>
       </v-tabs>
       <v-divider />
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup="setup">
-  import { useRouter } from 'vue-router'
+  import { useRouter, useRoute } from 'vue-router'
 
 interface MenuItem {
   title: string;
@@ -33,10 +33,20 @@ const menuItems: Ref<MenuItem[]> = ref([
 	{ title: 'Projects', to: '/projects' },
 ])
 
+const activeTab = ref(0);
+
 const router = useRouter();
-function changeTab(i) {
-  router.push(menuItems.value[i].to);
-}
+const route = useRoute();
+
+onMounted(() => {
+  let currentTab = menuItems.value.findIndex(el => el.to === route.path)
+  console.log('currentTab', currentTab)
+  if (currentTab !== -1) activeTab.value = currentTab;
+})
+
+watch(activeTab, (newValue, oldValue) => {
+  router.push(menuItems.value[newValue].to);
+})
 
 </script>
 
