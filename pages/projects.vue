@@ -35,9 +35,6 @@
       <v-card-title>2048 Game</v-card-title>
       <v-card-text>When I first started learning Vue while working at Clever Coding I recreated the game 2048 as way to become more familiar with vue. Later I recreated the game using react for the same reason.</v-card-text>
     </v-card>
-
-    <p>I have created a number of projects in my free time. I am currently working on uploading them here.</p>
-    <h3>Coming Soon!</h3>
   </div>
 </template>
 
