@@ -1,14 +1,17 @@
-
 <template>
   <div class="about-me">
-    <h2 class="mb-2"> Hi! My name is Caleb Baird</h2>
+    <h2 class="mb-2">Caleb Baird - Software Devloper</h2>
     <v-divider />
     <div class="section mt-8">
       <h3 class="heading-underline">Skills</h3>
       <div class="skills">
         <div class="skill" v-for="skill in skills">
           <v-btn @click="log(skill.name)" icon>
-            <img class="img" :alt="skill.name" :src="runtimeConfig.public.filePrefix + 'img/' + skill.icon" />
+            <img
+              class="img"
+              :alt="skill.name"
+              :src="runtimeConfig.public.filePrefix + 'img/' + skill.icon"
+            />
           </v-btn>
           <span class="name bg-surface">{{ skill.name }}</span>
           <!-- <v-expansion-panel :title="skill.name"  :text="skill.proficiency"/> -->
@@ -18,196 +21,200 @@
 
     <div class="section mt-8">
       <h3 class="heading-underline">Bio</h3>
-      <p>I am a software developer with about 5 years of experience.</p>
-      <p>So far most of my development experience has been with web development. I enjoy and have a talent for web development but I am also interested in expanding into other development roles.</p>
+      <p>I am a software engineer with over 7 years of experience.</p>
+      <p>
+        So far most of my development experience has been with web development.
+        I enjoy and have a talent for web development but I am also interested
+        in expanding into other development roles.
+      </p>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup="setup">
-  const runtimeConfig = useRuntimeConfig();
+const runtimeConfig = useRuntimeConfig();
 const skills: Ref<Skill> = ref([
   {
-    name: 'HTML5',
+    name: "HTML5",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
-    icon: 'html5.png',
+    icon: "html5.png",
   },
   {
-    name: 'CSS',
+    name: "CSS",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
-    icon: 'css.png',
+    icon: "css.png",
   },
   {
-    name: 'JavaScript',
+    name: "JavaScript",
     tags: [Tag.frontend, Tag.backend],
     proficiency: Proficiency.advanced,
-    icon: 'js.png',
+    icon: "js.png",
   },
   {
-    name: 'SASS',
+    name: "SASS",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
-    icon: 'scss.png',
+    icon: "scss.png",
   },
   {
-    name: 'JQuery',
+    name: "JQuery",
     tags: [Tag.frontend],
     proficiency: Proficiency.intermediate,
-    icon: 'jquery.png',
+    icon: "jquery.png",
   },
   {
-    name: 'TypeScript',
+    name: "TypeScript",
     tags: [Tag.frontend, Tag.backend],
     proficiency: Proficiency.advanced,
-    icon: 'ts.png',
+    icon: "ts.png",
   },
   {
-    name: 'Node JS',
+    name: "Node JS",
     tags: [Tag.backend],
     proficiency: Proficiency.advanced,
-    icon: 'node.png',
+    icon: "node.png",
   },
   {
-    name: 'Express JS',
+    name: "Express JS",
     tags: [Tag.backend],
     proficiency: Proficiency.advanced,
-    icon: 'express.png',
+    icon: "express.png",
   },
   {
-    name: 'Sequelize JS',
+    name: "Sequelize JS",
     tags: [Tag.backend],
     proficiency: Proficiency.advanced,
-    icon: 'sequelize.png',
+    icon: "sequelize.png",
   },
   {
-    name: 'MySQL',
+    name: "MySQL",
     tags: [Tag.backend],
     proficiency: Proficiency.intermediate,
-    icon: 'mysql.png',
+    icon: "mysql.png",
   },
   {
-    name: 'MongoDB',
+    name: "MongoDB",
     tags: [Tag.backend],
     proficiency: Proficiency.beginner,
-    icon: 'mongodb.png',
+    icon: "mongodb.png",
   },
   {
-    name: 'Mongoose',
+    name: "Mongoose",
     tags: [Tag.backend],
     proficiency: Proficiency.beginner,
-    icon: 'mongoose.png',
+    icon: "mongoose.png",
   },
   {
-    name: 'Git',
+    name: "Git",
     tags: [Tag.frontend, Tag.backend, Tag.devOps],
     proficiency: Proficiency.advanced,
-    icon: 'git.png',
+    icon: "git.png",
   },
   {
-    name: 'Gitlab',
+    name: "Gitlab",
     tags: [Tag.devOps],
     proficiency: Proficiency.advanced,
-    icon: 'gitlab.png',
+    icon: "gitlab.png",
   },
   {
-    name: 'Github',
+    name: "Github",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'github.png',
+    icon: "github.png",
   },
   {
-    name: 'Linux',
+    name: "Linux",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'linux.png',
+    icon: "linux.png",
   },
   {
-    name: 'Bash',
+    name: "Bash",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'bash.png',
+    icon: "bash.png",
   },
   {
-    name: 'Apache',
+    name: "Apache",
     tags: [Tag.devOps],
     proficiency: Proficiency.beginner,
-    icon: 'apache.png',
+    icon: "apache.png",
   },
   {
-    name: 'nginx',
+    name: "nginx",
     tags: [Tag.devOps],
     proficiency: Proficiency.beginner,
-    icon: 'nginx.png',
+    icon: "nginx.png",
   },
   {
-    name: 'docker',
+    name: "docker",
     tags: [Tag.frontend, Tag.backend, Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'docker.png',
+    icon: "docker.png",
   },
   {
-    name: 'docker-compose',
+    name: "docker-compose",
     tags: [Tag.frontend, Tag.backend, Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'docker-compose.png',
+    icon: "docker-compose.png",
   },
   {
-    name: 'Digital Ocean',
+    name: "Digital Ocean",
     tags: [Tag.devOps],
     proficiency: Proficiency.beginner,
-    icon: 'digital-ocean.png',
+    icon: "digital-ocean.png",
   },
   {
-    name: 'AWS',
+    name: "AWS",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'aws.png',
+    icon: "aws.png",
   },
   {
-    name: 'AWS S3 Bucket',
+    name: "AWS S3 Bucket",
     tags: [Tag.devOps],
     proficiency: Proficiency.beginner,
-    icon: 's3.png',
+    icon: "s3.png",
   },
   {
-    name: 'AWS Route 53',
+    name: "AWS Route 53",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
-    icon: 'route53.png',
+    icon: "route53.png",
   },
   {
-    name: 'Vue',
+    name: "Vue",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
-    icon: 'vue.png',
+    icon: "vue.png",
   },
   {
-    name: 'Nuxt JS',
+    name: "Nuxt JS",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
-    icon: 'nuxt.png',
+    icon: "nuxt.png",
   },
   {
-    name: 'Vuetify',
+    name: "Vuetify",
     tags: [Tag.frontend],
     proficiency: Proficiency.intermediate,
-    icon: 'vuetify.png',
+    icon: "vuetify.png",
   },
   {
-    name: 'React',
+    name: "React",
     tags: [Tag.frontend],
     proficiency: Proficiency.intermediate,
-    icon: 'react.png',
+    icon: "react.png",
   },
   {
-    name: 'Angular',
+    name: "Angular",
     tags: [Tag.frontend],
     proficiency: Proficiency.beginner,
-    icon: 'angular.png',
+    icon: "angular.png",
   },
-])
+]);
 
 interface Skill {
   name: string;
@@ -232,11 +239,9 @@ enum Proficiency {
 function log(s) {
   console.log(s);
 }
-
 </script>
 
 <style lang="scss" scoped>
-
 .skills {
   max-width: 100%;
   display: flex;
@@ -253,7 +258,7 @@ function log(s) {
     width: 55px;
     height: 55px;
     padding: 10px;
-    transition: .3s;
+    transition: 0.3s;
 
     :deep(img) {
       max-width: 100%;
@@ -280,5 +285,4 @@ function log(s) {
     white-space: nowrap;
   }
 }
-
 </style>

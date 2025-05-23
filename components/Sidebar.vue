@@ -1,12 +1,19 @@
 <template>
-  <v-navigation-drawer v-model="sidePanel" permanent :rail="rail" class="side-panel" app>
-		<v-list>
-			<v-list-item>
+  <v-navigation-drawer
+    v-model="sidePanel"
+    permanent
+    :rail="rail"
+    class="side-panel"
+    :class="{ rail }"
+    app
+  >
+    <v-list>
+      <v-list-item>
         <v-avatar>
           <v-img class="white--text align-end" height="100%" :src="avatar" />
         </v-avatar>
-        <h2 v-if="!rail" class="text-center"> Caleb Baird </h2>
-			</v-list-item>
+        <h2 v-if="!rail" class="text-center">Caleb Baird</h2>
+      </v-list-item>
 
       <v-list-item :href="'tel:' + phone">
         <v-icon icon="mdi-phone" />
@@ -32,43 +39,44 @@
       <v-list-item @click="toggleTheme">
         <v-icon icon="mdi-theme-light-dark" />
         <span v-if="!rail">
-          Switch to {{ theme.global.current.value.dark ? 'light' : 'dark' }} mode</span>
-
+          Switch to
+          {{ theme.global.current.value.dark ? "light" : "dark" }} mode</span
+        >
       </v-list-item>
-
-		</v-list>
-
-	</v-navigation-drawer>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
-<script lang="ts" setup="setup">
-  const runtimeConfig = useRuntimeConfig();
-import { useTheme } from 'vuetify'
-const theme = useTheme()
+<script lang="ts" setup>
+const runtimeConfig = useRuntimeConfig();
+import { useTheme } from "vuetify";
+const theme = useTheme();
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark
-    ? 'solarizedLight' : 'solarizedDark';
+    ? "solarizedLight"
+    : "solarizedDark";
 }
 
-if (window.matchMedia
-  && window.matchMedia("(prefers-color-scheme)".media !== "not at all")
-  && window.matchMedia("(prefers-color-scheme: light)")
-  && window.matchMedia("(prefers-color-scheme: light)").matches) {
-  theme.global.name.value = 'solarizedLight';
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme)".media !== "not at all") &&
+  window.matchMedia("(prefers-color-scheme: light)") &&
+  window.matchMedia("(prefers-color-scheme: light)").matches
+) {
+  theme.global.name.value = "solarizedLight";
 }
 
-const sidePanel: Rev<boolean | null> = ref(true);
-const rail: Rev<boolean> = ref(false);
+const sidePanel: Ref<boolean | null> = ref(true);
+const rail: Ref<boolean> = ref(false);
 
 function setRail() {
-  console.log('setRail')
   rail.value = !rail.value;
 }
-  const avatar = ref(runtimeConfig.public.filePrefix + 'img/profile.png');
-const name = ref('Caleb Baird');
-const phone = ref('208-390-8659');
-const email = ref('calebbaird5@gmail.com');
-const linkedin = ref('https://linkedin.com/in/calebbaird');
+const avatar = ref(runtimeConfig.public.filePrefix + "img/profile.png");
+const name = ref("Caleb Baird");
+const phone = ref("208-390-8659");
+const email = ref("calebbaird5@gmail.com");
+const linkedin = ref("https://linkedin.com/in/calebbaird");
 const drawer = ref(true);
 </script>
 
@@ -79,7 +87,11 @@ const drawer = ref(true);
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-width: 240px;
+
+  &.rail {
+    min-width: 60px;
+    padding-left: 0;
+  }
 
   .v-avatar {
     width: 100%;
@@ -94,6 +106,5 @@ const drawer = ref(true);
   .v-icon {
     margin-right: 10px;
   }
-
 }
 </style>

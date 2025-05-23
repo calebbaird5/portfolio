@@ -1,37 +1,35 @@
 <template>
-	<v-app>
-
+  <v-app>
     <Sidebar />
 
     <v-main>
-		  <v-tabs v-model="activeTab" >
-				<v-tab v-for="(item, i) in menuItems"> {{ item.title }} </v-tab>
+      <v-tabs v-model="activeTab">
+        <v-tab v-for="(item, i) in menuItems"> {{ item.title }} </v-tab>
       </v-tabs>
       <v-divider />
 
-	    <v-container>
-		    <slot />
-	    </v-container>
-		</v-main>
-
-	</v-app>
+      <v-container>
+        <slot />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts" setup="setup">
-  import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute } from "vue-router";
 
 interface MenuItem {
   title: string;
   to?: string;
   private?: boolean;
-  pageTitle?: string
+  pageTitle?: string;
 }
 
 const menuItems: Ref<MenuItem[]> = ref([
-	{ title: 'About Me', to: '/' },
-	{ title: 'Resume', to: '/resume' },
-	{ title: 'Projects', to: '/projects' },
-])
+  { title: "About Me", to: "/" },
+  { title: "Resume", to: "/resume" },
+  { title: "Projects", to: "/projects" },
+]);
 
 const activeTab = ref(0);
 
@@ -39,15 +37,14 @@ const router = useRouter();
 const route = useRoute();
 
 onMounted(() => {
-  let currentTab = menuItems.value.findIndex(el => el.to === route.path)
-  console.log('currentTab', currentTab)
+  let currentTab = menuItems.value.findIndex((el) => el.to === route.path);
+  console.log("currentTab", currentTab);
   if (currentTab !== -1) activeTab.value = currentTab;
-})
+});
 
 watch(activeTab, (newValue, oldValue) => {
   router.push(menuItems.value[newValue].to);
-})
-
+});
 </script>
 
 <!-- Scoped Styles -->
@@ -68,7 +65,7 @@ a {
   margin-bottom: 10px;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -78,5 +75,4 @@ a {
     width: 30%;
   }
 }
-
 </style>
