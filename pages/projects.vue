@@ -149,10 +149,12 @@ const projects = [
         <div v-if="project.credentials">
           <h4 class="mb-1">Credentials:</h4>
           <p class="text-body-2">
-            Username: <code>{{ project.credentials.username }}</code>
+            Username:
+            <v-code>{{ project.credentials.username }}</v-code>
           </p>
           <p class="text-body-2">
-            password: <code>{{ project.credentials.password }}</code>
+            password:
+            <v-code class="ml-1">{{ project.credentials.password }}</v-code>
           </p>
         </div>
       </div>
