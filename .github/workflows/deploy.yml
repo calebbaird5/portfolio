@@ -16,6 +16,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
 
+      - name: Remove existing deployment
+        run: rm -rf docs/
+
       - name: install Bun
         uses: oven-sh/setup-bun@v1
 
