@@ -15,6 +15,7 @@
     "nuxt": "latest",
     "sass": "latest",
     "vue": "latest",
+    "vue-pdf-embed": "^2.1.2",
     "vuetify": "latest"
   }
 }

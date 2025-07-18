@@ -1,13 +1,14 @@
 <template>
   <v-app>
-    <Sidebar />
-
-    <v-main>
+    <v-app-bar app>
+      <v-app-bar-nav-icon v-if="mobile" @click="sidePanel = !sidePanel" />
       <v-tabs v-model="activeTab">
         <v-tab v-for="(item, i) in menuItems"> {{ item.title }} </v-tab>
       </v-tabs>
-      <v-divider />
+    </v-app-bar>
+    <Sidebar :side-panel="sidePanel" :mobile="mobile" @update:side-panel="sidePanel = $event" />
 
+    <v-main>
       <v-container>
         <slot />
       </v-container>
@@ -15,8 +16,10 @@
   </v-app>
 </template>
 
-<script lang="ts" setup="setup">
+<script lang="ts" setup>
 import { useRouter, useRoute } from "vue-router";
+import { useDisplay } from "vuetify";
+const { mobile } = useDisplay();
 
 interface MenuItem {
   title: string;
@@ -33,12 +36,17 @@ const menuItems: Ref<MenuItem[]> = ref([
 
 const activeTab = ref(0);
 
+const sidePanel = ref(!mobile.value);
+
+watch(mobile, (isMobile) => {
+  sidePanel.value = !isMobile;
+});
+
 const router = useRouter();
 const route = useRoute();
 
 onMounted(() => {
   let currentTab = menuItems.value.findIndex((el) => el.to === route.path);
-  console.log("currentTab", currentTab);
   if (currentTab !== -1) activeTab.value = currentTab;
 });
 

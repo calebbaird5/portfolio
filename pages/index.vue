@@ -35,6 +35,30 @@
 const runtimeConfig = useRuntimeConfig();
 const skills: Ref<Skill> = ref([
   {
+    name: "TypeScript",
+    tags: [Tag.frontend, Tag.backend],
+    proficiency: Proficiency.advanced,
+    icon: "ts.png",
+  },
+  {
+    name: "JavaScript",
+    tags: [Tag.frontend, Tag.backend],
+    proficiency: Proficiency.advanced,
+    icon: "js.png",
+  },
+  {
+    name: "React",
+    tags: [Tag.frontend],
+    proficiency: Proficiency.intermediate,
+    icon: "react.png",
+  },
+  {
+    name: "Vue",
+    tags: [Tag.frontend],
+    proficiency: Proficiency.advanced,
+    icon: "vue.png",
+  },
+  {
     name: "HTML5",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
@@ -47,12 +71,6 @@ const skills: Ref<Skill> = ref([
     icon: "css.png",
   },
   {
-    name: "JavaScript",
-    tags: [Tag.frontend, Tag.backend],
-    proficiency: Proficiency.advanced,
-    icon: "js.png",
-  },
-  {
     name: "SASS",
     tags: [Tag.frontend],
     proficiency: Proficiency.advanced,
@@ -63,12 +81,6 @@ const skills: Ref<Skill> = ref([
     tags: [Tag.frontend],
     proficiency: Proficiency.intermediate,
     icon: "jquery.png",
-  },
-  {
-    name: "TypeScript",
-    tags: [Tag.frontend, Tag.backend],
-    proficiency: Proficiency.advanced,
-    icon: "ts.png",
   },
   {
     name: "Node JS",
@@ -161,12 +173,6 @@ const skills: Ref<Skill> = ref([
     icon: "docker-compose.png",
   },
   {
-    name: "Digital Ocean",
-    tags: [Tag.devOps],
-    proficiency: Proficiency.beginner,
-    icon: "digital-ocean.png",
-  },
-  {
     name: "AWS",
     tags: [Tag.devOps],
     proficiency: Proficiency.intermediate,
@@ -185,10 +191,10 @@ const skills: Ref<Skill> = ref([
     icon: "route53.png",
   },
   {
-    name: "Vue",
-    tags: [Tag.frontend],
-    proficiency: Proficiency.advanced,
-    icon: "vue.png",
+    name: "Digital Ocean",
+    tags: [Tag.devOps],
+    proficiency: Proficiency.beginner,
+    icon: "digital-ocean.png",
   },
   {
     name: "Nuxt JS",
@@ -201,12 +207,6 @@ const skills: Ref<Skill> = ref([
     tags: [Tag.frontend],
     proficiency: Proficiency.intermediate,
     icon: "vuetify.png",
-  },
-  {
-    name: "React",
-    tags: [Tag.frontend],
-    proficiency: Proficiency.intermediate,
-    icon: "react.png",
   },
   {
     name: "Angular",
