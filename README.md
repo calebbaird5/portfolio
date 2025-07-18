@@ -1,31 +1,33 @@
-# Nuxt 3 Minimal Starter
+# Caleb Baird Portfolio – Nuxt 3
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A personal portfolio website built with Nuxt 3 and Vuetify, showcasing projects, resume, and more. This site demonstrates modern web development practices and serves as a central hub for my professional presence.
+
+## Features
+
+- **Home Page** – Introduction and overview
+- **Projects Page** – Highlights selected projects
+- **Resume Page** – View or download my resume
+- **Sidebar Navigation** – Quick access to all sections
+- **Vuetify Integration** – Modern, responsive UI components
+- **Rich Public Assets** – Technology icons, profile image, and downloadable resume
 
 ## Setup
 
-Make sure to install the dependencies:
+Install dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
 npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
-## Development Server
+## Development
 
-Start the development server on http://localhost:3000
+Start the development server at [http://localhost:3000](http://localhost:3000):
 
 ```bash
 npm run dev
 ```
 
-## Production
+## Build & Deployment
 
 Build the application for production:
 
@@ -33,10 +35,25 @@ Build the application for production:
 npm run build
 ```
 
-Locally preview production build:
+Preview the production build locally:
 
 ```bash
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Project Structure
+
+- `pages/` – Main site pages (index, projects, resume)
+- `components/Sidebar.vue` – Sidebar navigation
+- `plugins/vuetify.ts` – Vuetify setup
+- `public/img/` – Images, technology icons, and resume PDF
+
+## Customization
+
+- Update your resume in `public/img/Caleb Baird Resume.pdf`
+- Add or update project details in `pages/projects.vue`
+- Replace images or icons in `public/img/`
+
+---
+
+For more details on Nuxt 3, see the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction).
