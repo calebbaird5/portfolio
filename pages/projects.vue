@@ -122,6 +122,32 @@ const projects = [
     description:
       "When I first started learning Vue while working at Clever Coding I recreated the game 2048 as way to become more familiar with vue. Later I recreated the game using react for the same reason.",
   },
+  {
+    class: "go-todo",
+    headerClass: "pa-2",
+    logo: "img/Cobra_Icon.png",
+    logoAlt: "Go Todo Icon",
+    versions: [
+      {
+        groupLabel: "",
+        links: [
+          {
+            type: "github",
+            href: "https://github.com/calebbaird5/go-todo",
+            label: "Code Repository",
+          },
+          {
+            type: "live",
+            label: "Live Demo",
+            disabled: true,
+          },
+        ],
+      },
+    ],
+    title: "Todo CLI",
+    description:
+      "I built a command-line todo application in Go to deepen my understanding of the language. Powered by Cobra, it lets you efficiently add, list, complete, delete, and tag tasks—all from your terminal. Whether you want to organize tasks with tags or quickly manage your to-dos, this CLI tool streamlines your workflow with simple, intuitive commands.",
+  },
 ];
 </script>
 
