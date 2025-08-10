@@ -248,6 +248,12 @@ const skills: Ref<Skill[]> = ref([
     icon: "vuetify.png",
   },
   {
+    name: "Golang",
+    tags: [Tag.backend],
+    proficiency: Proficiency.beginner,
+    icon: "go-lang.png",
+  },
+  {
     name: "Angular",
     tags: [Tag.frontend],
     proficiency: Proficiency.beginner,
